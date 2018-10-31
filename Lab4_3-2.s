@@ -102,7 +102,7 @@ GPIO_init:
 
 	//Default PA5 is Pull-up output, no need to set
 
-	//movs r0, #0x4000000
+	//movs r0, #0x8000000
 	//ldr  r1, =GPIOC_PUPDR
 	//str  r0, [r1]
 
