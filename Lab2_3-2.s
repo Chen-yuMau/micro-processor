@@ -13,11 +13,14 @@ L1:
 	mov R2, R3
 
 	subs R0, R0, #1
-
+	
+	cmp R2, #0
+	blt endd
 	cmp R0, #0
 	bgt L1
 
-	mov R4, R1
+	mov R4, R2
+endd:
 	bx lr
 main:
 	movs R0, #N
@@ -29,12 +32,12 @@ main:
 	cmp R0, 100
 	bgt outarange
 	bl fib
+	cmp R2, #0
+	bge nope
+	movs R4, -2
+nope:
 	b end
 outarange:
-	movs R0, #-1
-	b end
-	cmp R4, #0
-	bgt end
-	movs R4, #-2
+	movs R4, #-1
 end:
 L: B L

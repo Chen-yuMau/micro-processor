@@ -14,16 +14,18 @@ hamm:
 	eor R3, R0, R1
 
 L1:	lsrs R3, R3, #1
-	addcs R4, #1
+	bcc no
+	add R4, #1
+no:
 	cmp R3, #0
 	bne L1
 
 	bx lr
 main:
-	ldr R0, #X
-	ldr R1, #Y
+	movw R0, #X
+	movw R1, #Y
 	ldr R2, =result
-	
+
 	bl hamm
 
 	str R4, [R2]

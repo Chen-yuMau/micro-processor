@@ -15,7 +15,7 @@ L2:
 	ldrb r6, [r1]
 	ldrb r7, [r2]
 	cmp r6, r7
-	blt no
+	bgt no
 	strb r7, [r1]
 	strb r6, [r2]
 
